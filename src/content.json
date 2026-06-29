@@ -1,0 +1,43 @@
+{
+  "home": {
+    "home": true,
+    "title": "Dziękujemy",
+    "text": "za wybór naszej klasycznej i ponadczasowej deski. Mamy nadzieję, że będzie Ci służyć przez długie lata.",
+    "warning": "Jendak aby tak było przestrzegaj kilku prostych zasad →"
+  },
+
+  "washing": {
+    "title": "Mycie",
+    "text": "Do codziennej pielęgnacji używaj wody z odrobiną naturalnego płynu do mycia naczyń.",
+    "warning": "Zawsze po umyciu wycieraj deskę do sucha."
+  },
+
+  "cleaning": {
+    "title": "Czyszczenie",
+    "text": "Mimo, iż drewno posiada właściwości bakteriobójcze, czasami deskę należy porządnie wyczyścić i odkazić. By zrobić to skutecznie i bezpiecznie dla materiału użyj dedykowanego mydła lub soli i cytryny*",
+    "warning": "*przekrój owoc na pół, wyciśnij sok skrapiając powierzchnię deski, posyp solą i okrężnymi ruchami wetrzyj sól używając połówki cytryny."
+  },
+
+  "maintenance": {
+    "title": "Konserwacja",
+    "text": "Regularnie, min. 1 raz w miesiącu, zabezpiecz deskę wcierając w jej powierzchnię stosowny olej pochodzenia naturalnego*. Pozostaw na noc do wyschnięcia. Ewentualny nadmiar zbierz ręcznikiem papierowym i wytrzyj do sucha.",
+    "warning": "*Na przykład lniany lub kokosowy (nierafinowany)"
+  },
+
+  "renewal": {
+    "title": "Odnowa",
+    "text": "Gdy twoja deska zacznie nosić już wyraźne ślady użytkowania, możesz odnowić ją używając papieru ściernego o gradacji ziarna 80. Szlifuj ją (zawsze wzdłuż włókien!) Do uzyskania gładkiej powierzchni.",
+    "warning": "Odpyl. Zakonserwuj."
+  },
+
+  "warning": {
+    "title": "Unikaj jak ognia!",
+    "text": [
+      "ognia :)",
+      "wysokich temperatur",
+      "kontaktu z gorącymi powierzchniami",
+      "długiego namaczania",
+      "mycia w zmywarce"
+    ]
+  }
+}
