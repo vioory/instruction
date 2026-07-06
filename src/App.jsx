@@ -9,12 +9,23 @@ import { PiWarningDiamond } from "react-icons/pi";
 import { GoShieldCheck } from "react-icons/go";
 import { SlRefresh } from "react-icons/sl";
 import { TbVirusOff } from "react-icons/tb";
+import { IoArrowForwardCircleOutline } from "react-icons/io5";
+
 import { useState } from "react";
 import PageContent from "./PageContent";
 import content from "./content.json";
 
 function App() {
   const [page, setPage] = useState("home");
+
+  const backgrounds = {
+    home: IoArrowForwardCircleOutline,
+    washing: IoWaterOutline,
+    cleaning: TbVirusOff,
+    maintenance: GoShieldCheck,
+    renewal: SlRefresh,
+    warning: PiWarningDiamond,
+  };
 
   const navItems = [
     { key: "washing", label: "Mycie", icon: IoWaterOutline, danger: false },
@@ -44,7 +55,7 @@ function App() {
   return (
     <>
       <main className="content-container">
-        <PageContent {...content[page]} />
+        <PageContent {...content[page]} BackgroundIcon={backgrounds[page]} />
       </main>
       <section className="link-container">
         <div className="contact">

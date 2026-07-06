@@ -1,6 +1,8 @@
-function PageContent({ title, text, warning, home }) {
+function PageContent({ title, text, warning, BackgroundIcon }) {
   return (
     <>
+      {BackgroundIcon && <BackgroundIcon className="background-icon" />}
+
       <h1 className="header">{title}</h1>
 
       <div className="content">
