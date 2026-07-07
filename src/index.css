@@ -1,5 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Cabin+Condensed:wght@400;500;600;700&display=swap");
 
+@keyframes homeIconPulse {
+  0% {
+    opacity: 0.1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 0.1;
+  }
+}
+
 :root {
   color-scheme: light;
   --bg-color: #272b30;
@@ -55,8 +69,12 @@ body {
   height: 300px;
 
   opacity: 0.1;
-  pointer-events: none;
   z-index: 0;
+}
+
+.home-page {
+  stroke: var(--warning-color);
+  animation: homeIconPulse 2s ease-in-out infinite;
 }
 
 .header {
@@ -158,7 +176,6 @@ button {
 
 .contact .icon {
   font-size: 25px;
-  fill: var(--text-color);
 }
 
 #logo {

@@ -1,104 +1,139 @@
+import { useState } from "react";
+
 import logo from "./assets/logo.png";
-import mini_logo from "./assets/mini_logo.png";
+import miniLogo from "./assets/mini_logo.png";
+
 import { BiSolidShoppingBags } from "react-icons/bi";
-import { SlSocialInstagram } from "react-icons/sl";
+import { SlSocialInstagram, SlRefresh } from "react-icons/sl";
 import { BsTelephone } from "react-icons/bs";
 import { MdAlternateEmail } from "react-icons/md";
 import { IoWaterOutline } from "react-icons/io5";
 import { PiWarningDiamond } from "react-icons/pi";
 import { GoShieldCheck } from "react-icons/go";
-import { SlRefresh } from "react-icons/sl";
 import { TbVirusOff } from "react-icons/tb";
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
 
-import { useState } from "react";
 import PageContent from "./PageContent";
 import content from "./content.json";
 
-function App() {
-  const [page, setPage] = useState("home");
+const pages = {
+  home: {
+    content: content.home,
+    nav: null,
+    background: IoArrowForwardCircleOutline,
+  },
 
-  const backgrounds = {
-    home: IoArrowForwardCircleOutline,
-    washing: IoWaterOutline,
-    cleaning: TbVirusOff,
-    maintenance: GoShieldCheck,
-    renewal: SlRefresh,
-    warning: PiWarningDiamond,
-  };
+  washing: {
+    content: content.washing,
+    nav: {
+      label: "Mycie",
+      icon: IoWaterOutline,
+    },
+    background: IoWaterOutline,
+  },
 
-  const navItems = [
-    { key: "washing", label: "Mycie", icon: IoWaterOutline, danger: false },
-    {
-      key: "cleaning",
+  cleaning: {
+    content: content.cleaning,
+    nav: {
       label: "Czyszczenie",
       icon: TbVirusOff,
     },
-    {
-      key: "maintenance",
+    background: TbVirusOff,
+  },
+
+  maintenance: {
+    content: content.maintenance,
+    nav: {
       label: "Konserwacja",
       icon: GoShieldCheck,
     },
-    {
-      key: "renewal",
+    background: GoShieldCheck,
+  },
+
+  renewal: {
+    content: content.renewal,
+    nav: {
       label: "Odnowa",
       icon: SlRefresh,
     },
-    {
-      key: "warning",
+    background: SlRefresh,
+  },
+
+  warning: {
+    content: content.warning,
+    nav: {
       label: "Uwaga!",
       icon: PiWarningDiamond,
       danger: true,
     },
-  ];
+    background: PiWarningDiamond,
+  },
+};
+
+function App() {
+  const [page, setPage] = useState("home");
 
   return (
     <>
       <main className="content-container">
-        <PageContent {...content[page]} BackgroundIcon={backgrounds[page]} />
+        <PageContent
+          {...pages[page].content}
+          BackgroundIcon={pages[page].background}
+        />
       </main>
+
       <section className="link-container">
         <div className="contact">
           <a href="tel:+48602367854">
             <BsTelephone className="icon" />
           </a>
+
           <a href="mailto:vioory@proton.me">
             <MdAlternateEmail className="icon" />
           </a>
+
           <a
-            href="http://www.instagram.com/stolarnia_vioory/"
+            href="https://instagram.com/stolarnia_vioory"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noreferrer"
           >
             <SlSocialInstagram className="icon" />
           </a>
+
           <a
-            href="https://www.etsy.com/pl/shop/StolarniaVIOORY?ref=shop_profile&listing_id=4347567752"
+            href="https://etsy.com/pl/shop/StolarniaVIOORY"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noreferrer"
           >
             <BiSolidShoppingBags className="icon icon-red" />
           </a>
         </div>
-        <button onClick={() => setPage("home")}>
-          <img id="logo" src={logo} alt="Logo" />
-          <img id="mini-logo" src={mini_logo} alt="Logo" />
-        </button>
-        <nav className="links">
-          {navItems.map((item) => {
-            const Icon = item.icon;
 
-            return (
-              <button
-                key={item.key}
-                onClick={() => setPage(item.key)}
-                className={item.danger ? "danger-btn" : ""}
-              >
-                <Icon className={`icon ${item.danger ? "icon-red" : ""}`} />
-                <span className="link-text">{item.label}</span>
-              </button>
-            );
-          })}
+        <button onClick={() => setPage("home")}>
+          <img src={logo} id="logo" alt="logo" />
+          <img src={miniLogo} id="mini-logo" alt="logo" />
+        </button>
+
+        <nav className="links">
+          {Object.entries(pages)
+            .filter(([key]) => key !== "home")
+            .map(([key, pageData]) => {
+              const Icon = pageData.nav.icon;
+
+              return (
+                <button
+                  key={key}
+                  onClick={() => setPage(key)}
+                  className={pageData.nav.danger ? "danger-btn" : ""}
+                >
+                  <Icon
+                    className={pageData.nav.danger ? "icon danger-btn" : "icon"}
+                  />
+
+                  <span className="link-text">{pageData.nav.label}</span>
+                </button>
+              );
+            })}
         </nav>
       </section>
     </>
