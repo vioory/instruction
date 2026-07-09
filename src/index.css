@@ -18,7 +18,7 @@
   --second-color: #a89575;
   --text-color: #3e4753;
   --warning-color: #7c2828;
-  --border-pulse: borderPulse 1s ease-in-out infinite;
+  --border-pulse: borderPulse 1.2s ease-in-out infinite;
 }
 
 * {
