@@ -82,7 +82,9 @@ function App() {
         />
       </main>
 
-      <section className="link-container">
+      <section
+        className={`link-container ${page === "home" ? "home-page" : ""}`}
+      >
         <div className="contact">
           <a href="tel:+48602367854">
             <BsTelephone className="icon" />

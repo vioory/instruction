@@ -1,16 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Cabin+Condensed:wght@400;500;600;700&display=swap");
 
-@keyframes homeIconPulse {
-  0% {
-    opacity: 0.1;
+@keyframes borderPulse {
+  0%,
+  100% {
+    border-color: var(--primary-color);
   }
 
   50% {
-    opacity: 0.5;
-  }
-
-  100% {
-    opacity: 0.1;
+    border-color: var(--second-color);
   }
 }
 
@@ -21,6 +18,7 @@
   --second-color: #a89575;
   --text-color: #3e4753;
   --warning-color: #7c2828;
+  --border-pulse: borderPulse 1s ease-in-out infinite;
 }
 
 * {
@@ -72,11 +70,6 @@ body {
   z-index: 0;
 }
 
-.home-page {
-  stroke: var(--warning-color);
-  animation: homeIconPulse 2s ease-in-out infinite;
-}
-
 .header {
   font-size: clamp(35px, 4vw, 50px);
   font-weight: 100;
@@ -111,6 +104,19 @@ li::before {
 
 /* LINK & LOGO CONTAINER */
 
+.home-page > *,
+.home-page > * > * {
+  animation: var(--border-pulse);
+}
+
+.home-page > * > * {
+  opacity: 0.2;
+}
+
+.links > button:first-child {
+  opacity: 1 !important;
+}
+
 .link-container {
   background-color: var(--second-color);
   display: flex;
@@ -142,6 +148,7 @@ button {
   border-left: 2px solid var(--primary-color);
   margin: 10px;
   padding: 10px;
+  /* animation: var(--border-pulse); */
 }
 
 .links > button:last-child {
@@ -196,6 +203,7 @@ button {
     padding: 0;
     margin: 20px;
     border-left: 2px solid var(--primary-color);
+    /* animation: var(--border-pulse); */
   }
 
   .links > button {

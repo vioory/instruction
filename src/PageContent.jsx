@@ -1,11 +1,7 @@
-function PageContent({ home, title, text, warning, BackgroundIcon }) {
+function PageContent({ title, text, warning, BackgroundIcon }) {
   return (
     <>
-      {
-        <BackgroundIcon
-          className={`background-icon ${home ? "home-page" : ""}`}
-        />
-      }
+      {<BackgroundIcon className="background-icon" />}
 
       <h1 className="header">{title}</h1>
 
