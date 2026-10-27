@@ -8,7 +8,7 @@
 
   "washing": {
     "title": "Mycie",
-    "text": "Do codziennej pielęgnacji używaj wody z odrobiną naturalnego płynu do mycia naczyń.",
+    "text": "Przed pierwszym użyciem dokładnie umyj deskę.\n\nDo codziennej pielęgnacji używaj wody z odrobiną naturalnego płynu do mycia naczyń.",
     "warning": "Zawsze po umyciu wycieraj deskę do sucha."
   },
 
@@ -21,7 +21,7 @@
   "maintenance": {
     "title": "Konserwacja",
     "text": "Regularnie, min. 1 raz w miesiącu, zabezpiecz deskę wcierając w jej powierzchnię stosowny olej pochodzenia naturalnego*. Pozostaw na noc do wyschnięcia. Ewentualny nadmiar zbierz ręcznikiem papierowym i wytrzyj do sucha.",
-    "warning": "*Na przykład lniany lub kokosowy (nierafinowany)"
+    "warning": "*Na przykład tungowy, lniany lub kokosowy (nierafinowany)"
   },
 
   "renewal": {

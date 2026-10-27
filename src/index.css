@@ -25,6 +25,7 @@
   box-sizing: border-box;
   color: var(--text-color);
   font-family: "Cabin Condensed", sans-serif;
+  white-space: pre-line;
 }
 
 html {
